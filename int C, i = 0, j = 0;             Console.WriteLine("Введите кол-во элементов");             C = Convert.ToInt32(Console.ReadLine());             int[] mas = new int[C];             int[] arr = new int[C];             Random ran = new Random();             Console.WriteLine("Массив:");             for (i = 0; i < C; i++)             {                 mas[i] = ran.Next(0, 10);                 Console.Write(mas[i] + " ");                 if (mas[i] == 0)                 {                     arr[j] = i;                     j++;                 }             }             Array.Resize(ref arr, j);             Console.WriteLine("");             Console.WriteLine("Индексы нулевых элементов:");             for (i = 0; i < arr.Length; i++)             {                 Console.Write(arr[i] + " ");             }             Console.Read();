@@ -1,0 +1,27 @@
+
+int C, i = 0, j = 0;
+            Console.WriteLine("Введите кол-во элементов");
+            C = Convert.ToInt32(Console.ReadLine());
+            int[] mas = new int[C];
+            int[] arr = new int[C];
+            Random ran = new Random();
+            Console.WriteLine("Массив:");
+            for (i = 0; i < C; i++)
+            {
+                mas[i] = ran.Next(0, 10);
+                Console.Write(mas[i] + " ");
+                if (mas[i] == 0)
+                {
+                    arr[j] = i; 
+                    j++;
+                }
+            }
+            Array.Resize(ref arr, j);
+            Console.WriteLine("");
+            Console.WriteLine("Индексы нулевых элементов:");
+            for (i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+            Console.ReadKey();
+        }
